@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Programming, Motherfucker - Do you speak it?</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://s3.amazonaws.com/zedshaw.progmofo/application.css" type="text/css">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+  </head>
+  <body>
+    <h1>Statinis failas is /view katalogo</h1l>
+    <p><a href="/index.html">pradinis puslapis</a></p>
+  </body>
+</html>

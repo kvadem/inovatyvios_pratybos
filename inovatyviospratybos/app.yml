@@ -5,9 +5,9 @@ api_version: go1
 
 handlers:
 
-- url: /images/(.*)
-  static_files: ./images/\1
-  upload: ./images/.*
+- url: /view/(.*)
+  static_files: ./view/\1
+  upload: ./view/.*
 
 - url: /.*
   script: _go_app

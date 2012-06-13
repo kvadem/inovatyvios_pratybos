@@ -2,6 +2,8 @@ package hello
 
 import (
     "fmt"
+    "os"
+    "bufio"
     "net/http"
 )
 
@@ -11,15 +13,27 @@ func init() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
-    a :=
-"<html>" +
-  "<body bgcolor='silver'>" +
-    "<h1>Prasideda inovatyviu pratybu programavimo darbai</h1>" +
-    "<a href='./images/index.html'>Paziurekite ponai koki puiku html turiu</a>" +
-  "</body>" +
-"</html>"
-
-    fmt.Fprint(w, a)
+  //home_page := read_file_content("./view/index.html")
+  home_page := read_file_content("./index.html")
+  fmt.Fprint(w, home_page)
 }
 
+/**
+ * This function reads file content and return it as a string.
+ * author: Dainius Jocas
+ * input: file_name
+ * output: content
+ */
+func read_file_content(file_name string) string{
+  f, _ := os.Open(file_name)
+  defer f.Close()
+  r := bufio.NewReader(f)
+  var content string = "";
+  for {
+    line, ok := r.ReadString('\n')
+    if ok != nil { break }
+    content = content + line
+  }
+  return content
+}
 
