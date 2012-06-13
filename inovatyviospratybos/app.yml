@@ -1,13 +1,17 @@
 application: inovatyviospratybos
-version: 1
+version: 4
 runtime: go
 api_version: go1
 
 handlers:
 
 - url: /view/(.*)
-  static_files: ./view/\1
-  upload: ./view/.*
+  static_files: /view/\1
+  upload: /view/.*
+  
+- url: /
+  static_files: index.html
+  upload: index.html
 
 - url: /.*
   script: _go_app
